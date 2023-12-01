@@ -1,6 +1,7 @@
 import { registerProvider } from "@tsed/di";
 import { DataSource } from "typeorm";
 import { Logger } from "@tsed/logger";
+import "dotenv/config";
 
 export const POSTGRES_DATA_SOURCE = Symbol.for("PostgresDataSource");
 export const PostgresDataSource = new DataSource({

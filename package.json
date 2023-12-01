@@ -10,7 +10,9 @@
     "test": "pnpm run test:lint && pnpm run test:coverage",
     "test:unit": "cross-env NODE_ENV=test jest",
     "test:coverage": "pnpm run test:unit",
-    "typeorm": "typeorm-ts-node-commonjs",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d src/infra/db/data-source/PostgresDatasource.ts",
+    "typeorm:migrate": "npm run typeorm migration:generate -- -n",
+    "typeorm:run": "npm run typeorm migration:run",
     "test:lint": "eslint '**/*.{ts,js}'",
     "test:lint:fix": "eslint '**/*.{ts,js}' --fix"
   },
